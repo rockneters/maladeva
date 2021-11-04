@@ -34,9 +34,11 @@ apt install figlet -y
 apt install lolcat -y
 gem install lolcat
 apt install curl
+
+#install speedtesst
+curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
+apt-get install speedtest -y
 timedatectl set-timezone Asia/Jakarta
-
-
 clear
 cd
 #wget https://raw.githubusercontent.com/rockneters/maladeva/main/cf.sh && chmod +x cf.sh && ./cf.sh
