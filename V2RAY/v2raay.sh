@@ -12,14 +12,14 @@ figlet PANEL V2RAY | lolcat
 echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
 echo -e "                     ┃V2RAY VMESS MENU┃                   " |lolcat
 echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
-echo -e "[1] • Create Vmess Websocket Account"
-echo -e "[2] • Delete Vmess Websocket Account"
-echo -e "[3] • Renew Vmess Account"
-echo -e "[4] • Check User Login Vmess"
-echo -e "[5] • Create Trial Vmess Websocket Account"
+echo -e "  [1] • Create Vmess Websocket Account"
+echo -e "  [2] • Delete Vmess Websocket Account"
+echo -e "  [3] • Renew Vmess Account"
+echo -e "  [4] • Check User Login Vmess"
+echo -e "  [5] • Create Trial Vmess Websocket Account"
 echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
-echo -e "[x] • MENU"   | lolcat
-echo -e "╠══════════════════════════════════════════════════════════╣" | lolcatt
+echo -e "  [x] • MENU"   | lolcat
+echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
 echo -e ""
 read -p "Please Input Number  [ 1-5 or x ] :  "  v2ray
 echo -e ""
