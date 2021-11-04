@@ -1,5 +1,5 @@
 #!/bin/bash
-#shadowsocks-libev obfs install by geo
+#shadowsocks-libev obfs install by Horasss
 source /etc/os-release
 OS=$ID
 ver=$VERSION_ID
@@ -88,26 +88,10 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O add-ss "https://raw.githubusercontent.com/rockneters/maladeva/main/add-ss.sh"
-wget -O del-ss "https://raw.githubusercontent.com/rockneters/maladeva/main/del-ss.sh"
-wget -O cek-ss "https://raw.githubusercontent.com/rockneters/maladeva/main/cek-ss.sh"
-wget -O renew-ss "https://raw.githubusercontent.com/rockneters/maladeva/main/renew-ss.sh"
-chmod +x add-ss
-chmod +x del-ss
-chmod +x cek-ss
-chmod +x renew-ss
-cd
-rm -f /root/sodosok.sh
-/etc/shadowsocks-libev/tls.json
-#wget -O /etc/shadowsocks-libev/http.json https://halucok.me/menu-all/http.json && chmod +x /etc/shadowsocks-libev/http.json
-chmod +x add-ss
-chmod +x del-ss
-chmod +x cek-ss
-chmod +x renew-ss
-cd
-rm -f /root/sodosok.sh
-k.me/cek-ss.sh"
-wget -O renew-ss "https://raw.githubusercontent.com/rockneters/maladeva/main/renew-ss.sh"
+wget -O add-ss "https://raw.githubusercontent.com/rockneters/blacklabel/main/add-ss.sh"
+wget -O del-ss "https://raw.githubusercontent.com/rockneters/blacklabel/main/del-ss.sh"
+wget -O cek-ss "https://raw.githubusercontent.com/rockneters/blacklabel/main/cek-ss.sh"
+wget -O renew-ss "https://raw.githubusercontent.com/rockneters/blacklabel/main/renew-ss.sh"
 chmod +x add-ss
 chmod +x del-ss
 chmod +x cek-ss
