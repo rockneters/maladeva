@@ -278,6 +278,7 @@ wget -O autokill "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH
 wget -O ceklim "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/ceklim.sh"
 wget -O restart "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/restart.sh"
 wget -O user-password "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/user-password"
+wget -O ssh "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/ssh.sh"
 sleep 1
 chmod +x usernew
 chmod +x trial
@@ -290,6 +291,7 @@ chmod +x autokill
 chmod +x ceklim
 chmod +x restart
 chmod +x user-password
+chmod +x ssh
 
 wget -O clear-log "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/clear-log.sh"
 chmod +x clear-log
@@ -299,49 +301,6 @@ dos2unix clear-log
 wget -O xp "https://raw.githubusercontent.com/rockneters/maladeva/main/xp.sh"
 wget -O /usr/bin/user-limit https://raw.githubusercontent.com/rockneters/maladeva/main/user-limit.sh && chmod +x /usr/bin/user-limit
 
-chmod +x add-host
-chmod +x script-info
-chmod +x menu
-
-chmod +x speedtest
-chmod +x info
-chmod +x about
-
-chmod +x tendang
-
-chmod +x ram
-
-chmod +x clear-log
-chmod +x change-port
-chmod +x port-ovpn
-chmod +x port-ssl
-chmod +x port-wg
-chmod +x port-sstp
-chmod +x port-tr
-chmod +x port-squid
-chmod +x port-ws
-chmod +x port-vless
-chmod +x wbmn
-chmod +x clear-log
-chmod +x xp
-chmod +x cfd
-chmod +x cff
-chmod +x cfh
-chmod +x running
-chmod +x ingfo
-chmod +x autoreboot
-chmod +x bannerku
-chmod +x bbr
-chmod +x menu
-chmod +x trojaan
-chmod +x vleess
-chmod +x wgr
-chmod +x l2tp
-chmod +x v2raay
-chmod +x ssh
-chmod +x sstpp
-chmod +x ssssr
-#chmod +x add-trgo
 echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 
