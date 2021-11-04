@@ -493,19 +493,28 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 cd /usr/bin
-wget -O add-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/add-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/add-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/add-tr.sh"
-wget -O del-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/del-ws.sh"
-wget -O del-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/del-vless.sh"
-wget -O del-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/del-tr.sh"
-wget -O cek-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/cek-ws.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/cek-vless.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/cek-tr.sh"
-wget -O renew-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/renew-ws.sh"
-wget -O renew-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/renew-vless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/renew-tr.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/rockneters/maladeva/main/cert.sh"
+wget -O v2raay "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/v2raay.sh"
+wget -O trojaan "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trojaan.sh"
+wget -O vleess "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/vleess.sh"
+
+wget -O add-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/add-ws.sh"
+wget -O add-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/add-vless.sh"
+wget -O add-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/add-tr.sh"
+wget -O del-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/del-ws.sh"
+wget -O del-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/del-vless.sh"
+wget -O del-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/del-tr.sh"
+wget -O cek-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/cek-ws.sh"
+wget -O cek-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/cek-vless.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/cek-tr.sh"
+wget -O renew-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/renew-ws.sh"
+wget -O renew-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/renew-vless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/renew-tr.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/cert.sh"
+wget -O trialws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trialws.sh"
+
+chmod +x v2raay
+chmod +x trojaan
+chmod +x vleess
 chmod +x add-ws
 chmod +x add-vless
 chmod +x add-tr
@@ -519,6 +528,7 @@ chmod +x renew-ws
 cmod +x renew-vless
 chmod +x renew-tr
 chmod +x certv2ray
+chmod +x trialws
 cd
 rm -f ins-vt.sh
 mv /root/domain /etc/v2ray

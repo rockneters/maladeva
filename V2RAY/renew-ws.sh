@@ -43,13 +43,16 @@ sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/config.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/none.json
 service cron restart
 clear
-echo "Sukses !"
+
+echo "Success!"
+echo "==========================" | lolcat
+echo "${OWNER}"
+echo "      • RENEW VMESS •     "
 echo "==========================" | lolcat
 echo "Client Name : $user"
 echo "Expired On  : $exp4"
 echo ""
 echo "VMESS Successfully Renewed"
 echo "==========================" | lolcat
-echo "Terima kasih banyak"
-echo "By Rocknet Store • VPN"
-echo ""
+echo -e "${PESAN}"
+echo -e ""

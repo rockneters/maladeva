@@ -1,16 +1,9 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-MYIP=$(wget -qO- icanhazip.com);
-echo "Script By Geo"
+source /var/lib/premium-script/settvps.conf
+echo "Permission Accepted"
+sleep 1
 clear
-source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
-domain=$(cat /etc/v2ray/domain)
-else
-domain=$IP
-fi
+
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
@@ -44,10 +37,12 @@ vlesslink2="vless://${uuid}@${domain}:$none?path=geo&encryption=none&type=ws#${u
 systemctl restart v2ray@vless
 systemctl restart v2ray@vnone
 clear
-echo -e ""
-cat /usr/bin/bannerku1 | lolcat
-echo -e ""
-echo -e "==========-V2RAY/VLESS-=========="
+
+echo -e "Success!"
+echo -e "==========================" | lolcat
+echo -e "${OWNER}"
+echo -e "         • VLESS •        "
+echo -e "==========================" | lolcat
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "port TLS       : $tls"
@@ -56,15 +51,13 @@ echo -e "id             : ${uuid}"
 echo -e "Encryption     : none"
 echo -e "network        : ws"
 echo -e "path           : geo"
-echo -e "================================="
-echo -e " ${green}Aktif Selama   : $masaaktif Hari"
-echo -e " Dibuat Pada    : $tnggl"
-echo -e " Berakhir Pada  : $expe${off}"
-echo -e "================================="
+echo -e "==========================" | lolcat
+echo -e "Masa Aktif     : $masaaktif Hari"
+echo -e "Expaired       : $expe"
+echo -e "==========================" | lolcat
 echo -e "link TLS       : ${vlesslink1}"
-echo -e "================================="
+echo -e "==========================" | lolcat
 echo -e "link none TLS  : ${vlesslink2}"
-echo -e "================================="
-echo -e ""
-echo -e ""
+echo -e "==========================" | lolcat
+echo -e "${PESAN}"
 echo -e ""
