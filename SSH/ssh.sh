@@ -5,8 +5,7 @@ NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 clear
-figlet SSH | lolcat -d 5
-echo -e ""
+figlet PANEL SSH | lolcat -d 4
 echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
 echo -e "                    ┃SSH & OPENVPN MENU┃                  " |lolcat
 echo -e "╠══════════════════════════════════════════════════════════╣" | lolcat
@@ -30,36 +29,58 @@ echo -e ""
 case $ssh in
 1)
 usernew
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 2)
 trial
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 3)
 renew
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 4)
 hapus
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 5)
 cek
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 6)
 member
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 7)
 delete
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 8)
 autokill
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 9)
 ceklim
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 10)
 restart
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 11)
 user-password
+read -p "Tekan ENTER untuk kembali..!"
+ssh
 ;;
 x)
 exit
