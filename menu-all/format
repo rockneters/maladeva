@@ -1,0 +1,72 @@
+#!/bin/bash
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ifconfig.me/ip);
+echo "Checking VPS"
+clear
+figlet BENGKEL VPS | lolcat -d 5
+echo -e ""
+echo -e "═════════════════════════════════════════" | lolcat
+echo -e "                Bengkel VpS              "
+echo -e "═════════════════════════════════════════" | lolcat
+echo -e "[1]  Block Torrent"
+echo -e "[2]  Bench Network"
+echo -e "[3]  Edit Banner Messege"
+echo -e "[4]  Log Limit Account"
+echo -e "[5]  Updatescript"
+echo -e "[6]  Delete Akun Expired"
+echo -e "[7]  Generate SSH"
+echo -e "[8]  User List"
+echo -e "[9]  User Lock"
+echo -e "[10] Ganti Password VPS"
+echo -e "[11] User Unlock"
+echo -e ""
+echo -e "══════════════════════════════════════════" | lolcat
+echo -e " x)   MENU"
+echo -e "══════════════════════════════════════════" | lolcat
+echo -e ""
+read -p "     Please Input Number  [1-10 or x] :  "  ambe
+echo -e ""
+case $ambe in
+1)
+antitorrent
+;;
+2)
+bench-network
+;;
+3)
+nano /etc/issue.net
+;;
+4)
+log-limit
+;;
+5)
+updatescript
+;;
+6)
+user-delete-expired
+;;
+7)
+user-generate
+;;
+8)
+user-list
+;;
+9)
+user-lock
+;;
+10)
+user-password
+;;
+11)
+user-unlock
+;;
+x)
+exit
+;;
+*)
+clear
+menu
+;;
+esac
