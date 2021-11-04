@@ -96,19 +96,19 @@ Download_SSR(){
 }
 Service_SSR(){
 if [[ ${OS} = "centos" ]]; then
-wget --no-check-certificate https://raw.githubusercontent.com/rockneters/maladeva/master/ssrmu_centos -O /etc/init.d/ssrmu
+wget --no-check-certificate https://raw.githubusercontent.com/rockneters/maladeva/master/SSR/ssrmu_centos -O /etc/init.d/ssrmu
 chmod +x /etc/init.d/ssrmu
 chkconfig --add ssrmu
 chkconfig ssrmu on
 else
-wget --no-check-certificate https://raw.githubusercontent.com/rockneters/maladeva/master/ssrmu_debian -O /etc/init.d/ssrmu
+wget --no-check-certificate https://raw.githubusercontent.com/rockneters/maladeva/master/SSR/ssrmu_debian -O /etc/init.d/ssrmu
 chmod +x /etc/init.d/ssrmu
 update-rc.d -f ssrmu defaults
 fi
 }
 JQ_install(){
 cd "${ssr_folder}"
-wget --no-check-certificate "https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64" -O ${jq_file}
+wget --no-check-certificate "https://github.com/rockneters/maladeva/raw/main/SSR/jq-linux64" -O ${jq_file}
 chmod +x ${jq_file}
 }
 Installation_dependency(){
@@ -122,7 +122,7 @@ if [[ ${OS} == "centos" ]]; then
 }
 Start_SSR(){
 	check_pid
-	wget -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/rockneters/maladeva/main/ssrmu"
+	wget -O /etc/init.d/ssrmu "https://raw.githubusercontent.com/rockneters/maladeva/main/SSR/ssrmu"
 	/etc/init.d/ssrmu start
 }
 Install_SSR(){
@@ -138,9 +138,10 @@ Save_iptables
 Start_SSR
 }
 Install_SSR
-wget -O /usr/bin/ssr https://raw.githubusercontent.com/rockneters/maladeva/main/ssrmu.sh && chmod +x /usr/bin/ssr
-wget -O /usr/bin/add-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/add-ssr.sh && chmod +x /usr/bin/add-ssr
-wget -O /usr/bin/del-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/del-ssr.sh && chmod +x /usr/bin/del-ssr
-wget -O /usr/bin/renew-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/renew-ssr.sh && chmod +x /usr/bin/renew-ssr
+cd /usr/bin
+wget -O ssr https://raw.githubusercontent.com/rockneters/maladeva/main/SSR/ssrmu.sh && chmod +x ssr
+wget -O add-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/SSR/add-ssr.sh && chmod +x add-ssr
+wget -O del-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/SSR/del-ssr.sh && chmod +x del-ssr
+wget -O renew-ssr https://raw.githubusercontent.com/rockneters/maladeva/main/SSR/renew-ssr.sh && chmod +x renew-ssr
 touch /usr/local/shadowsocksr/akun.conf
 rm -f /root/ssr.sh
