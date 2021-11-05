@@ -30,11 +30,10 @@ clear
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                    ┃• INFORMATION SERVER •┃                  " |lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e " • ISP Name  : $ISP              • RAM     : $tram MB"
-echo -e " • City      : $CITY             • Waktu   : $jam"
-echo -e " • CPU Model :$cname             • Tanggal : $tnggl"
-echo -e " • Cores     : $cores            • IP VPS  : $IPVPS"
-echo -e " • CPU Freq  :$freq MHz          • Domain  : $DOMAIN"
+echo -e " • ISP Name : $ISP • City : $CITY • Cores : $cores"
+echo -e " • CPU Model : $cname  • RAM : $tram MB • FREQ : $freq"
+echo -e " • Tanggal : $tnggl • Hari : $hari • Waktu : $jam"
+echo -e " • IP VPS  : $IPVPS • Domain  : $DOMAIN"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                       ┃• PANEL OPTIONS •┃                     " |lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
@@ -45,7 +44,7 @@ echo -e " [4] • SSTP  Account                   [8] • TROJAN"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                        ┃• SYSTEM MENU •┃                      " | lolcat 
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e " [9] • SETTING VPS                    [19] • Speedtest VPS"
+echo -e "[ 9] • SETTING VPS                    [19] • Speedtest VPS"
 echo -e "[10] • Add Domain/Host                [20] • Info Display System"
 echo -e "[11] • Change Port                    [21] • Info Script Install"
 echo -e "[12] • Autobackup Data VPS            [22] • Clear Log"
@@ -56,7 +55,7 @@ echo -e "[16] • Limit Bandwith Server          [26] • Cek Bandwidth VPS"
 echo -e "[17] • Check Usage of Ram             [27] • Install BBR" 
 echo -e "[18] • Reboot VPS                     [28] • Install Update"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e "[ x ]   Exit                                                " | lolcat
+echo -e "[ x ]   Exit                                                "
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e ""
 read -p "Select From Options [ 1-28 or x ] :  " menu
