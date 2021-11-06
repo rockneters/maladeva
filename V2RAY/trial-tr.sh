@@ -5,7 +5,7 @@ sleep 1
 clear
 
 uuid=$(cat /etc/trojan/uuid.txt)
-user=Trial-`</dev/urandom tr -dc X-Z0-9 | head -c3`
+user=trial-`</dev/urandom tr -dc X-Z0-9 | head -c3`
 #tr="$(cat ~/log-install.txt | grep -i Trojan | cut -d: -f2|sed 's/ //g')"
 tnggl=$(date +"%R")
 read -p "Expired (Jam): " masaaktif
