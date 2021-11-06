@@ -27,6 +27,7 @@ tnggl=$(date +"%d-%B-%Y")
 	swap=$( free -m | awk 'NR==4 {print $2}' )
 	up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
 clear
+figlet ROCKNET VPN | lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                    ┃• INFORMATION SERVER •┃                  " |lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
@@ -44,16 +45,15 @@ echo -e " [4] • SSTP  Account                   [8] • TROJAN"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                        ┃• SYSTEM MENU •┃                      " | lolcat 
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e "[ 9] • SETTING VPS                    [19] • Speedtest VPS"
-echo -e "[10] • Add Domain/Host                [20] • Info Display System"
-echo -e "[11] • Change Port                    [21] • Info Script Install"
-echo -e "[12] • Autobackup Data VPS            [22] • Clear Log"
-echo -e "[13] • Backup Data VPS                [23] • Auto Reboot"
-echo -e "[14] • Restore Data VPS               [24] • Pointing VPS"
-echo -e "[15] • Webmin Menu                    [25] • Service Status"
-echo -e "[16] • Limit Bandwith Server          [26] • Cek Bandwidth VPS"
-echo -e "[17] • Check Usage of Ram             [27] • Install BBR" 
-echo -e "[18] • Reboot VPS                     [28] • Install Update"
+echo -e "[ 9] • SETTING VPS                    [18] • Speedtest VPS"
+echo -e "[10] • Add Domain/Host                [19] • Info Display System"
+echo -e "[11] • Change Port                    [20] • Info Script Install"
+echo -e "[12] • Autobackup Data VPS            [21] • Clear Log"
+echo -e "[13] • Backup Data VPS                [22] • Auto Reboot"
+echo -e "[14] • Restore Data VPS               [23] • Pointing VPS"
+echo -e "[15] • Webmin Menu                    [24] • Service Status"
+echo -e "[16] • Limit Bandwith Server          [25] • Cek Bandwidth VPS"
+echo -e "[17] • Reboot VPS                     [26] • Update Script" 
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "[ x ]   Exit                                                "
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
@@ -142,63 +142,52 @@ read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 17)
-ram
+reboot
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 18)
-reboot
+speedtest
 ;;
 19)
-speedtest
-read -p "Tekan ENTER untuk kembali ke MENU"
-menu
-;;
-20)
 info
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-21)
+20)
 about
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-22)
+21)
 clear-log
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-23)
+22)
 autoreboot
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-24)
+23)
 pointing
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-25)
+24)
 geo
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-26)
+25)
 bw
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-27)
-bbr
+26)
+update
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
-;;
-28)
-rm -rf paket.sh && apt install curl && wget https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/paket.sh && apt install dos2unix && dos2unix paket.sh && chmod +x paket.sh && ./paket.sh
-;;
-29)
-systemctl restart shadowsocks-libev-server@tls && systemctl restart shadowsocks-libev-server@http
 ;;
 x)
 exit
