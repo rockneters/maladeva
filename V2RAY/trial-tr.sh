@@ -1,5 +1,6 @@
 #!/bin/bash
 source /var/lib/premium-script/settvps.conf
+clear
 echo "Permission Accepted"
 sleep 1
 clear
