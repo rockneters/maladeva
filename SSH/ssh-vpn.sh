@@ -300,7 +300,3 @@ dos2unix clear-log
 
 wget -O xp "https://raw.githubusercontent.com/rockneters/maladeva/main/xp.sh"
 wget -O /usr/bin/user-limit https://raw.githubusercontent.com/rockneters/maladeva/main/user-limit.sh && chmod +x /usr/bin/user-limit
-
-echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
-echo "0 0 * * * root xp" >> /etc/crontab
-
