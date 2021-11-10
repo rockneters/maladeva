@@ -7,7 +7,8 @@ echo ""
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-		read -rp "User: " -e user
+user=trial-`</dev/urandom tr -dc X-Z0-9 | head -c3`
+		#read -rp "User: " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/vless.json | wc -l)
 
 		if [[ ${CLIENT_EXISTS} == '1' ]]; then
@@ -18,15 +19,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
-tgl=$(date -d "$masaaktif days" +"%d")
-bln=$(date -d "$masaaktif days" +"%b")
-thn=$(date -d "$masaaktif days" +"%Y")
-expe="$tgl $bln, $thn"
-tgl2=$(date +"%d")
-bln2=$(date +"%b")
-thn2=$(date +"%Y")
-tnggl="$tgl2 $bln2, $thn2"
-exp=`date -d "$masaaktif days" +"%d-%m-%Y"`
+exp=`date -d "$masaaktif hour" +"%R"`
 created=`date -d "0 days" +"%d-%m-%Y"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vless.json
@@ -52,8 +45,8 @@ echo -e "Encryption     : none"
 echo -e "network        : ws"
 echo -e "path           : geo"
 echo -e "==========================" | lolcat
-echo -e "Masa Aktif     : $masaaktif Hari"
-echo -e "Expaired       : $expe"
+echo -e "Masa Aktif     : $masaaktif Jam"
+echo -e "Expaired       : $exp WIB"
 echo -e "==========================" | lolcat
 echo -e "link TLS       : ${vlesslink1}"
 echo -e "==========================" | lolcat
