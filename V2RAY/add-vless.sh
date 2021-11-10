@@ -1,9 +1,9 @@
 #!/bin/bash
-source /var/lib/premium-script/settvps.conf
-echo "Permission Accepted"
-sleep 1
+#source /var/lib/premium-script/settvps.conf
+#echo "Permission Accepted"
+#sleep 1
 clear
-
+echo ""
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
