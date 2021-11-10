@@ -1,0 +1,36 @@
+#!/bin/bash
+
+data=( `cat /etc/v2ray/config.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%R"`
+echo "Waktu sekarang : $now"
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/v2ray/config.json" | cut -d ' ' -f 3)
+echo "User : $user Expaired : $exp"
+if [[ "$exp" == "$now" ]]; then
+echo "Hapus user : $user yang telah expaired"
+sed -i "/^### $user $exp/,/^},{/d" /etc/v2ray/config.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/v2ray/none.json
+rm -f /etc/v2ray/$user-tls.json /etc/v2ray/$user-none.json
+systemctl restart v2ray
+systemctl restart v2ray@none
+else
+echo "User: $user tidak dihapus"
+fi
+done
+
+#del expaired trojan
+data=( `cat /etc/trojan/akun.conf | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%R"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/trojan/akun.conf" | cut -d ' ' -f 3)
+echo "User : $user Expaired : $exp"
+if [[ "$exp" == "$now" ]]; then
+sed -i "/^### $user $exp/d" "/etc/trojan/akun.conf"
+sed -i '/^,"'"$user"'"$/d' /etc/trojan/config.json
+systemctl restart trojan
+else
+echo "Tidak ada yg dihapus!"
+fi
+done
