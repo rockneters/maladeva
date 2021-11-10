@@ -34,3 +34,20 @@ else
 echo "Tidak ada yg dihapus!"
 fi
 done
+
+#del exp vless
+data=( `cat /etc/v2ray/vless.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%R"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/v2ray/vless.json" | cut -d ' ' -f 3)
+echo "User : $user Expaired : $exp"
+if [[ "$exp" == "$now" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/v2ray/vless.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/v2ray/vnone.json
+systemctl restart v2ray@vless
+systemctl restart v2ray@vnone
+else
+echo "Tidak ada yg dihapus"
+fi
+done
