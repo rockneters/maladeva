@@ -1,32 +1,17 @@
 #!/bin/bash
-grey='\x1b[90m'
-red='\x1b[91m'
-green='\x1b[92m'
-yellow='\x1b[93m'
-blue='\x1b[94m'
-purple='\x1b[95m'
-cyan='\x1b[96m'
-white='\x1b[37m'
-bold='\033[1m'
-off='\x1b[m'
-flag='\x1b[47;41m'
-
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-COUNTRY=$(curl -s ipinfo.io/country )
-
-MYIP=$(wget -qO- ipinfo.io/ip);
+source /var/lib/premium-script/settvps.conf
 clear
-domain=$(cat /etc/v2ray/domain)
 
 read -rp "Bug: " -e bug
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
-user=Trial-`</dev/urandom tr -dc X-Z0-9 | head -c2`
+user=trial-`</dev/urandom tr -dc X-Z0-9 | head -c3`
 uuid=$(cat /proc/sys/kernel/random/uuid)
 tnggl=$(date +"%R")
 read -p "Expired (Jam): " ktf
 exp=`date -d "$ktf hour" +"%R"`
+#expd=date -d "0 days" +"%d-%m-%Y"
+#exp=date -d "$ktf hour" +"%R"
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"2"',"email": "'""$user""'"' /etc/v2ray/config.json
 sed -i '/#none$/a\### '"$user $exp"'\
@@ -69,13 +54,13 @@ systemctl restart v2ray
 systemctl restart v2ray@none
 service cron restart
 clear
-echo -e ""
+echo -e "Sukses..!"
 echo "==========================" | lolcat
+echo -e "$OWNER    "
 echo -e "  TRIAL V2RAY VMESS    "
 echo "==========================" | lolcat
 echo -e "ISP            : ${ISP}"
 echo -e "CITY           : ${CITY}"
-echo -e "COUNTRY        : ${COUNTRY}"
 echo -e "Remarks        : ${user}"
 echo -e "Bug            : ${bug}"
 echo -e "Domain         : ${domain}"
@@ -86,15 +71,15 @@ echo -e "AlterID        : 2"
 echo -e "Security       : auto"
 echo -e "Network        : ws"
 echo -e "Path           : /geo"
-echo "==========================" | lolcat
-echo -e "VMESS TLS"
+echo "--------------------------" | lolcat
+echo -e "VMESS TLS :"
 echo -e "${vmesslink1}"
-echo -e ""
-echo "==========================" | lolcat
-echo -e "VMESS NON-TLS"
+echo "--------------------------" | lolcat
+echo -e "VMESS NON-TLS :"
 echo -e "${vmesslink2}"
-echo -e ""
+echo "--------------------------" | lolcat
+echo -e "Masa Aktif     : $ktf Jam"
+echo -e "Expaired       : $exp WIB"
 echo "==========================" | lolcat
-echo -e "Aktif Selama   : $ktf Jam"
-echo "==========================" | lolcat
+echo -e "$PESAN"
 echo -e ""
