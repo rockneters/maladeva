@@ -75,6 +75,10 @@ wget https://raw.githubusercontent.com/rockneters/maladeva/main/WS/websocket.sh 
 # Antiabuse
 cd
 wget https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/antiabuse.sh && chmod +x antiabuse.sh && ./antiabuse.sh
+cd /usr/bin
+wget -O exp-jam "http://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/exp-jam.sh" && chmod +x exp-jam
+wget -O xp "http://raw.githubusercontent.com/rockneters/maladeva/main/SSH/xp.sh" && chmod +x xp
+
 cd
 #rm -f /root/enc.sh
 rm -f /root/antiabuse.sh
