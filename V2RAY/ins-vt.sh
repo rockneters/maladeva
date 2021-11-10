@@ -510,8 +510,8 @@ wget -O renew-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2R
 wget -O renew-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/renew-vless.sh"
 wget -O renew-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/renew-tr.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/cert.sh"
-wget -O trialws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trialws.sh"
-
+wget -O trial-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trial-ws.sh"
+wget -O trial-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trial-tr.sh"
 chmod +x v2raay
 chmod +x trojaan
 chmod +x vleess
@@ -528,7 +528,8 @@ chmod +x renew-ws
 cmod +x renew-vless
 chmod +x renew-tr
 chmod +x certv2ray
-chmod +x trialws
+chmod +x trial-ws
+chmod +x trial-tr
 cd
 rm -f ins-vt.sh
 mv /root/domain /etc/v2ray
