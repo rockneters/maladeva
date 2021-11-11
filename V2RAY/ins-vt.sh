@@ -496,6 +496,7 @@ cd /usr/bin
 wget -O v2raay "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/v2raay.sh"
 wget -O trojaan "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/trojaan.sh"
 wget -O vleess "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/vleess.sh"
+wget -O bbr "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/bbr.sh" && chmod 777 bbr && bbr
 
 wget -O add-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/add-ws.sh"
 wget -O add-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/add-vless.sh"
