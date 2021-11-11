@@ -95,9 +95,9 @@ wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/rockneters
 /etc/init.d/nginx restart
 
 # install badvpn
-cd
-wget -O /usr/bin/badvpn-udpgw "https://github.com/rockneters/maladeva/raw/main/SSH/badvpn-udpgw64"
-chmod +x /usr/bin/badvpn-udpgw
+cd /usr/bin
+wget -O badvpn-udpgw "https://github.com/rockneters/maladeva/raw/main/SSH/badvpn-udpgw64"
+chmod +x badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
@@ -106,6 +106,7 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
 # setting port ssh
+cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
 # install dropbear
