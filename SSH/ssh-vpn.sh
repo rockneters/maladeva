@@ -150,9 +150,13 @@ socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
-[dropbear]
+[stunnelws]
 accept = 443
-connect = 127.0.0.1:109
+connect = 127.0.0.1:2053
+
+[dropbear]
+accept = 222
+connect = 127.0.0.1:22
 
 [dropbear]
 accept = 777
