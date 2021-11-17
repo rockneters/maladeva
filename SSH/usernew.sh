@@ -3,6 +3,7 @@ source /var/lib/premium-script/settvps.conf
 echo "Permission Accepted"
 sleep 1
 clear
+echo ""
 read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
@@ -47,8 +48,8 @@ echo "SSL/TLS     : $ssl"
 echo "Port Squid  : $sqd"
 echo "badvpn      : $badvpn"
 echo "==========================" | lolcat
-echo -e "PAYLOAD WS  :"
-echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Upgrade: websocket[crlf][crlf]"
+echo "PAYLOAD WS  :"
+echo "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Upgrade: websocket[crlf][crlf]"
 echo "==========================" | lolcat
 echo "Download FIle OpenVPN"
 echo "TCP $ovpn   : http://$IP:81/client-tcp-$ovpn.ovpn"
