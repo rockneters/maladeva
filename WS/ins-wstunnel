@@ -7,11 +7,10 @@ echo Installing Websocket-SSH Python
 sleep 1
 echo Cek Hak Akses...
 sleep 0.5
-cd
 cd /usr/local/bin/
-wget -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/rockneters/maladeva/main/WS/ws-stunnel
-chmod +x /usr/local/bin/ws-stunnel
-
+wget https://raw.githubusercontent.com/rockneters/maladeva/main/WS/ws-stunnel && chmod +x ws-stunnel
+wget -O edu https://raw.githubusercontent.com/rockneters/maladeva/main/WS/edu.sh && chmod +x edu && ./edu
+cd
 # Installing Service
 cat > /etc/systemd/system/ws-stunnel.service << END
 [Unit]
@@ -36,3 +35,4 @@ systemctl daemon-reload
 #Enable & Start & Restart ws-stunnel service
 systemctl enable ws-stunnel.service
 systemctl restart ws-stunnel.service
+
