@@ -31,8 +31,10 @@ created=`date -d "0 days" +"%d-%m-%Y"`
 echo -e "### $user $exp" >> /etc/trojan/akun.conf
 systemctl restart trojan
 trojanlink="trojan://${user}@${domain}:${tr}"
-clear
 
+echo "#TROJAN $user $exp ${trojanlink}" >> /etc/akun.conf
+clear
+echo ""
 echo "Success!"
 echo "==========================" | lolcat
 echo "${OWNER}"
@@ -46,7 +48,7 @@ echo "Key        : ${user}"
 echo "link       : ${trojanlink}"
 echo "==========================" | lolcat
 echo "Masa Aktif : $masaaktif Hari"
-echo "Expaired   : $expe"
+echo "Expaired   : $exp"
 echo "==========================" | lolcat
 echo "${PESAN}"
 echo ""
