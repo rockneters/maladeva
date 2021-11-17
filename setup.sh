@@ -64,7 +64,8 @@ cd
 wget https://raw.githubusercontent.com/rockneters/maladeva/main/BR/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 cd
-wget https://raw.githubusercontent.com/rockneters/maladeva/main/WS/websocket.sh && chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/rockneters/maladeva/main/WS/ins-wstunnel && chmod +x ins-wstunnel && ./ins-wstunnel
+#wget https://raw.githubusercontent.com/rockneters/maladeva/main/WS/websocket.sh && chmod +x websocket.sh && ./websocket.sh
 #wget https://raw.githubusercontent.com/rockneters/maladeva/main/edu/jamal.sh && chmod +x jamal.sh && ./jamal.sh
 #wget https://raw.githubusercontent.com/rockneters/maladeva/main/edu/edu.sh && chmod +x edu.sh && screen -S edu ./edu.sh
 
@@ -81,6 +82,7 @@ wget -O xp "http://raw.githubusercontent.com/rockneters/maladeva/main/SSH/xp.sh"
 
 cd
 #rm -f /root/enc.sh
+rm -f /root/ins-wstunnel
 rm -f /root/antiabuse.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
