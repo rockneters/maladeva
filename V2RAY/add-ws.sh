@@ -7,15 +7,15 @@ domain=$(cat /etc/v2ray/domain)
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
-		read -rp "User: " -e user
-		CLIENT_EXISTS=$(grep -w $user /etc/v2ray/config.json | wc -l)
+                read -rp "User: " -e user
+                CLIENT_EXISTS=$(grep -w $user /etc/v2ray/config.json | wc -l)
 
-		if [[ ${CLIENT_EXISTS} == '1' ]]; then
-			echo ""
-			echo "A client with the specified name was already created, please choose another name."
-			exit 1
-		fi
-	done
+                if [[ ${CLIENT_EXISTS} == '1' ]]; then
+                        echo ""
+                        echo "A client with the specified name was already created, please choose another name."
+                        exit 1
+                fi
+        done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 tgl=$(date -d "$masaaktif days" +"%d")
@@ -69,8 +69,9 @@ vmesslink2="vmess://$(base64 -w 0 /etc/v2ray/$user-none.json)"
 systemctl restart v2ray
 systemctl restart v2ray@none
 service cron restart
-clear
 
+echo "#VMESS $user $exp ${vmesslink1} ${vmesslink2}" >> /etc/akun.conf
+clear
 echo -e "Success!"
 echo -e "==========================" | lolcat
 echo -e "${OWNER}"
@@ -87,7 +88,7 @@ echo -e "network        : ws"
 echo -e "path           : geo"
 echo -e "==========================" | lolcat
 echo -e "Masa Aktif     : $masaaktif Hari"
-echo -e "Expaired       : $expe"
+echo -e "Expaired       : $exp"
 echo -e "==========================" | lolcat
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "==========================" | lolcat
