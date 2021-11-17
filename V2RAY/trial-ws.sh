@@ -53,6 +53,7 @@ vmesslink2="vmess://$(base64 -w 0 /etc/v2ray/$user-none.json)"
 systemctl restart v2ray
 systemctl restart v2ray@none
 service cron restart
+echo "#VMESS $user $exp" >> /etc/akun.conf
 clear
 echo -e "Sukses..!"
 echo "==========================" | lolcat
