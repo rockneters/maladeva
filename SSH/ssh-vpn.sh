@@ -274,6 +274,7 @@ clear
 cd /usr/bin
 wget -O usernew "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/usernew.sh"
 wget -O trial "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/trial.sh"
+wget -O trial-ssh "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/trial-ssh.sh" && chmod +x trial-ssh
 wget -O renew "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/renew.sh"
 wget -O hapus "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/hapus.sh"
 wget -O cek "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/cek.sh"
@@ -284,6 +285,8 @@ wget -O ceklim "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/c
 wget -O restart "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/restart.sh"
 wget -O user-password "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/user-password"
 wget -O ssh "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/ssh.sh"
+wget -O xp "https://raw.githubusercontent.com/rockneters/maladeva/main/xp.sh" && chmod +x xp
+wget -O user-limit https://raw.githubusercontent.com/rockneters/maladeva/main/user-limit.sh && chmod +x user-limit
 sleep 1
 chmod +x usernew
 chmod +x trial
@@ -297,11 +300,9 @@ chmod +x ceklim
 chmod +x restart
 chmod +x user-password
 chmod +x ssh
-
+cd
 wget -O clear-log "https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/clear-log.sh"
 chmod +x clear-log
 apt install -y dos2unix
 dos2unix clear-log
 
-wget -O xp "https://raw.githubusercontent.com/rockneters/maladeva/main/xp.sh"
-wget -O /usr/bin/user-limit https://raw.githubusercontent.com/rockneters/maladeva/main/user-limit.sh && chmod +x /usr/bin/user-limit
