@@ -43,7 +43,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/edu-ssh 1945
+ExecStart=/usr/bin/python -O /usr/local/bin/edu-ssh 443
 Restart=on-failure
 
 [Install]
@@ -75,7 +75,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/edu-ovpn 2082
+ExecStart=/usr/bin/python -O /usr/local/bin/edu-ovpn 2096
 Restart=on-failure
 
 [Install]
@@ -92,6 +92,6 @@ echo -e "Done Install Ssh & Ovpn Websocket"
 echo -e "==============================="
 echo -e "PORT SSH NONTLS    : 2095"
 echo -e "PORT SSH WS/TLS    : 443"
-echo -e "PORT OVPN WS B     : 2082"
+echo -e "PORT OVPN WS B     : 2096"
 echo -e "==============================="
 echo -e ""
