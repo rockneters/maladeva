@@ -1,10 +1,5 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-MYIP=$(wget -qO- icanhazip.com);
-domain=$(cat /etc/v2ray/domain)
-echo "Checking VPS"
+source /var/lib/premium-script/settvps.conf
 clear
 IP=$(wget -qO- icanhazip.com);
 #ssl="$(cat ~/log-install.txt | grep -w "Stunnel4" | cut -d: -f2)"
