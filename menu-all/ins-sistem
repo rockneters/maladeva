@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cd /usr/bin
+wget -O add-host "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/add-host.sh" && chmod +x add-host
+wget -O ram "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/ram.sh" && chmod +x ram
+wget -O swapkvm "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/swapkvm.sh" && chmod +x swapkvm
+wget -O change "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/change.sh" && chmod +x change
+wget -O panel-domain "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/panel-domain.sh" && chmod +x panel-domain
+wget -O running "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/running.sh" && chmod +x running
+wget -O bench-network "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/bench-network.sh" && chmod +x bench-network
+wget -O bw "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/bw.sh" && chmod +x bw
+
+wget -O port-ovpn "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-ovpn.sh" && chmod +x port-ovpn
+wget -O port-squid "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-squid.sh" && chmod +x port-squid
+wget -O port-ssl "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-ssl.sh" && chmod +x port-ssl
+wget -O port-sstp "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-sstp.sh" && chmod +x port-sstp
+wget -O port-tr "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-tr.sh" && chmod +x port-tr
+wget -O port-vless "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-vless.sh" && chmod +x port-vless
+wget -O port-wg "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-wg.sh" && chmod +x port-wg
+wget -O port-ws "https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/port-ws.sh" && chmod +x port-ws
+
+cd
