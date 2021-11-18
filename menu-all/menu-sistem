@@ -1,0 +1,39 @@
+#!/bin/bash
+clear
+clear
+figlet MENU  SISTEM | lolcat
+echo -e "═════════════════════════════════════════════════════════════════" | lolcat
+echo -e "[01] • UPDATE SCRIPT                [10] • SPEEDTEST"
+echo -e "[02] • CHANGE DOMAIN/HOST           [11] • SWAP MEMORY"
+echo -e "[03] • CHANGE PORT                  [12] • RESTART ALL SERVICE"
+echo -e "[04] • AUTOBACKUP DATA VPS          [13] • CLEAR LOG"
+echo -e "[05] • BACKUP DATA VPS              [14] • AUTO REBOOT VPS"
+echo -e "[06] • RESTORE DATA VPS             [15] • POINTING VPS"
+echo -e "[07] • CHECK BANDWIDTH              [16] • SERVICE STATUS"
+echo -e "[08] • LIMIT BANDWIDTH VPS          [17] • WEBMIN MENU"
+echo -e "[09] • CHECK USAGE RAM              [18] • ABOUT THIS SCRIPT"
+echo -e "═════════════════════════════════════════════════════════════════" | lolcat
+echo -e "[88] • << BACK                                   [00] • MENU "
+echo -e "═════════════════════════════════════════════════════════════════" | lolcat
+echo -e ""
+read -p "Select From Options Nurmber :  " menu
+echo -e ""
+case $menu in
+01 | 1)
+ssh
+read -p "Tekan ENTER untuk kembali ke MENU"
+menu-sistem
+;;
+01 | 1)
+ssh
+read -p "Tekan ENTER untuk kembali ke MENU"
+menu-sistem
+;;
+88)
+menu
+;;
+*)
+read -p "Number not found ! Let's try again"
+menu-sistem
+;;
+esac
