@@ -1,15 +1,5 @@
 #!/bin/bash
-yl='\e[32;1m'
-bl='\e[36;1m'
-gl='\e[32;1m'
-rd='\e[31;1m'
-mg='\e[0;95m'
-blu='\e[34m'
-op='\e[35m'
-or='\033[1;33m'
-bd='\e[1m'
 clear 
-
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 IPVPS=$(curl -s ipinfo.io/ip )
 DOMAIN=$(cat /etc/v2ray/domain)
@@ -20,45 +10,42 @@ IPVPS=$(curl -s ipinfo.io/ip )
 jam=$(date +"%T")
 hari=$(date +"%A")
 tnggl=$(date +"%d-%B-%Y")
-	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
-	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
-	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
-	tram=$( free -m | awk 'NR==2 {print $2}' )
-	swap=$( free -m | awk 'NR==4 {print $2}' )
-	up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
+cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
+tram=$( free -m | awk 'NR==2 {print $2}' )
+swap=$( free -m | awk 'NR==4 {print $2}' )
+up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+
 clear
 figlet ROCKNET VPN | lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                    ┃• INFORMATION SERVER •┃                  " |lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e " • ISP Name : $ISP • City : $CITY • Cores : $cores"
-echo -e " • CPU Model : $cname  • RAM : $tram MB • FREQ : $freq"
-echo -e " • Tanggal : $tnggl • Hari : $hari • Waktu : $jam"
-echo -e " • IP VPS  : $IPVPS • Domain  : $DOMAIN"
+echo -e " ISP NAME • REGION    : $ISP • $CITY"
+echo -e " CPU MODEL • FREQ     :$cname • $freq MHz "
+echo -e " HARI • TANGGAL • JAM : $hari • $tnggl • $jam"
+echo -e " Domain • IP          : $DOMAIN • $IPVPS"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e "                       ┃• PANEL OPTIONS •┃                     " |lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e " [l] • SSH & OpenVPN                   [5] • SSR & SS Account"
-echo -e " [2] • WIREGUARD                       [6] • VMESS"
-echo -e " [3] • L2TP & PPTP Account             [7] • VLESS"
-echo -e " [4] • SSTP  Account                   [8] • TROJAN"
+echo -e "[0l] • PANEL SH & OpenVPN                [05] • PANEL SSR & SS"
+echo -e "[02] • PANEL WIREGUARD                   [06] • PANEL VMESS"
+echo -e "[03] • PANEL L2TP & PPTP                 [07] • PANEL VLESS"
+echo -e "[04] • PANEL SSTP                        [08] • PANEL TROJAN"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e "                        ┃• SYSTEM MENU •┃                      " | lolcat 
+echo -e "                       ┃• QUICK SHORTCUT •┃                      " | lolcat
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e "[ 9] • SETTING VPS                    [18] • Speedtest VPS"
-echo -e "[10] • Add Domain/Host                [19] • Info Display System"
-echo -e "[11] • Change Port                    [20] • Info Script Install"
-echo -e "[12] • Autobackup Data VPS            [21] • Clear Log"
-echo -e "[13] • Backup Data VPS                [22] • Auto Reboot"
-echo -e "[14] • Restore Data VPS               [23] • Pointing VPS"
-echo -e "[15] • Webmin Menu                    [24] • Service Status"
-echo -e "[16] • Limit Bandwith Server          [25] • Cek Bandwidth VPS"
-echo -e "[17] • Reboot VPS                     [26] • Update Script" 
+echo -e "|>   SSH   <|             |>  VMESS  <|             |> TROJAN <|"
+echo -e "[11] • ADD                [15] • ADD                [19] • ADD"
+echo -e "[12] • TRIAL              [16] • TRIAL              [20] • TRIAL"
+echo -e "[13] • LIST               [17] • LIST               [21] • LIST"
+echo -e "[14] • LOGIN              [18] • LOGIN              [22] • LOGIN"
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
-echo -e "[ x ]   Exit                                                "
+echo -e "[99] • SYSTEM MENU                                  [00] • EXIT "
 echo -e "═════════════════════════════════════════════════════════════════" | lolcat
 echo -e ""
-read -p "Select From Options [ 1-28 or x ] :  " menu
+read -p "Select From Options Number? :  " menu
 echo -e ""
 case $menu in
 1)
@@ -142,58 +129,72 @@ read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 17)
-reboot
+ram
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 18)
-speedtest
+reboot
 ;;
 19)
-info
+speedtest
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 20)
-about
+info
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 21)
-clear-log
+about
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 22)
-autoreboot
+clear-log
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 23)
-pointing
+autoreboot
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 24)
-geo
+pointing
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 25)
-bw
+geo
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
 26)
-update
+bw
 read -p "Tekan ENTER untuk kembali ke MENU"
 menu
 ;;
-x)
+27)
+bbr
+read -p "Tekan ENTER untuk kembali ke MENU"
+menu
+;;
+28)
+#rm -rf paket.sh && apt install curl && wget https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/paket.sh && apt install dos2unix && dos2unix paket.sh && chmod +x paket.sh && ./paket.sh
+;;
+29)
+systemctl restart shadowsocks-libev-server@tls && systemctl restart shadowsocks-libev-server@http
+;;
+99)
+menu-sistem
+;;
+00 | 0)
 exit
 ;;
 *)
-clear
+echo "Nomor yang Anda pilih tidak ada dalam MENU !"
 menu
 ;;
 esac
