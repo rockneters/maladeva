@@ -114,6 +114,9 @@ systemctl enable autosett
 wget -O /usr/bin/menu https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/menu.sh && chmod +x /usr/bin/menu
 touch /etc/akun.conf && chmod +x /etc/akun.conf
 
+wget https://raw.githubusercontent.com/rockneters/maladeva/main/menu-all/ins-sistem && chmod +x ins-sistem && ./ins-sistem
+rm -f ins-sistem
+
 echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "* * * * * root exp-jam" >> /etc/crontab
