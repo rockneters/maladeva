@@ -1,17 +1,17 @@
-#!/bin/bash                                                                             
-red="\e[1;31m"                                                                          
-green="\e[0;32m"                                                                        
-NC="\e[0m"                                                                              
+#!/bin/bash
+red="\e[1;31m"
+green="\e[0;32m"
+NC="\e[0m"
 clear
 echo -e "======================================" | lolcat
-echo -e "            Status Service            " 
+echo -e "            Status Service            "
 echo -e "======================================" | lolcat
-status="$(systemctl show ssh.service --no-page)"                                   
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
-if [ "${status_text}" == "active" ]                                                     
-then                                                                                    
-echo -e "SSH               : SSH Service is "$green"running"$NC""                  
-else                                                                                    
+status="$(systemctl show ssh.service --no-page)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e "SSH               : SSH Service is "$green"running"$NC""
+else
 echo -e "SSh               : SSH Service is "$red"not running (Error)"$NC""        
 fi
 status="$(systemctl show stunnel4.service --no-page)"                                   
