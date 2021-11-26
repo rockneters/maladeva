@@ -41,11 +41,10 @@ apt-get install speedtest -y
 timedatectl set-timezone Asia/Jakarta
 clear
 cd
-wget https://raw.githubusercontent.com/rockneters/maladeva/main/cf.sh && chmod +x cf.sh && ./cf.sh
+#wget https://raw.githubusercontent.com/rockneters/maladeva/main/cf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
 wget https://raw.githubusercontent.com/rockneters/maladeva/main/SSH/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 #install v2ray
-cd
 wget http://raw.githubusercontent.com/rockneters/maladeva/main/V2RAY/ins-vt.sh && chmod +x ins-vt.sh && screen -S v2ray ./ins-vt.sh
 cd
 #wget https://raw.githubusercontent.com/rockneters/maladeva/main/OTHER/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
